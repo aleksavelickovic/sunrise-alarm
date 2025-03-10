@@ -9,7 +9,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-// Zavuisna biblioteka: gson-2.12.1.jar
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+// Zavisna biblioteka: gson-2.12.1.jar
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -17,7 +20,9 @@ import com.google.gson.JsonObject;
 /**
  * 
  */
-public class Application {
+public class Application extends JFrame {
+
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @param args
@@ -68,7 +73,9 @@ public class Application {
 			  "status": "OK",
 			  "tz
 		*/
-		System.out.println(jsonObj.getAsJsonObject("results").get("sunrise")); //Ugnezdjeni Kljucevi 
+		String sunrise = jsonObj.getAsJsonObject("results").get("sunrise").toString(); //Ugnezdjeni Kljucevi 
+		
+		JOptionPane.showMessageDialog(null, "Sunrise is at: " + sunrise);
 	}
 
 }
