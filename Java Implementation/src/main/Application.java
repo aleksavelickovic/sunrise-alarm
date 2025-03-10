@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -73,9 +76,13 @@ public class Application extends JFrame {
 			  "status": "OK",
 			  "tz
 		*/
-		String sunrise = jsonObj.getAsJsonObject("results").get("sunrise").toString(); //Ugnezdjeni Kljucevi 
+		String sunriseString = jsonObj.getAsJsonObject("results").get("sunrise").toString().replaceAll("\"", "").trim(); //Ugnezdjeni Kljucevi i uklanjanje duplih navodnika
+				
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm:ss a");
+		LocalTime time = LocalTime.parse(sunriseString, formatter);
+		boolean isSunrise = time.equals(LocalTime.now());
 		
-		JOptionPane.showMessageDialog(null, "Sunrise is at: " + sunrise);
+		JOptionPane.showMessageDialog(null, "Sunrise is at: " + sunriseString + System.lineSeparator() + "Is sunrise now: " + isSunrise);
 	}
 
 }
