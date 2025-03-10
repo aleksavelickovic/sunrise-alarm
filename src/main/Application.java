@@ -33,12 +33,12 @@ public class Application {
 																								// sirina i duzina Novog Sada
 		
 		
-		HttpURLConnection con = (HttpURLConnection) url.openConnection(); // TODO dodati try-catch u slucaju da je odgovor drugaciji od 200
-		con.setRequestMethod("GET");
-		con.setRequestProperty("Content-Type", "application/json");
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection(); // TODO dodati try-catch u slucaju da je odgovor drugaciji od 200
+		connection.setRequestMethod("GET");
+		connection.setRequestProperty("Content-Type", "application/json");
 
 		// Isti princip kao citanje iz fajla u javi, gradimo string
-		BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		String inputLine;
 		String content = "";
 		while ((inputLine = reader.readLine()) != null) {
