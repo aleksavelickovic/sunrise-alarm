@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/aleksa/Fakultet/Projekti/sunrise-alarm/Java Implementation/sunrise-alarm/gson-2.12.1.jar"/>
+	<classpathentry kind="lib" path="/home/aleksa/Fakultet/Projekti/sunrise-alarm/sunrise-alarm/Java Implementation/gson-2.12.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
