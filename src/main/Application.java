@@ -22,7 +22,6 @@ public class Application {
 	 * @param args
 	 * @throws IOException
 	 */
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Gson gson = new Gson();
@@ -47,7 +46,7 @@ public class Application {
 		JsonObject jsonObj = element.getAsJsonObject();
 		
 		System.out.println(jsonObj);
-		System.out.println(jsonObj.get("results"));
+		System.out.println(jsonObj.getAsJsonObject("results").get("sunrise"));
 	}
 
 }
