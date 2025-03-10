@@ -67,7 +67,7 @@ public class Application {
 			  },
 			  "status": "OK",
 			  "tz
-			 */
+		*/
 		System.out.println(jsonObj.getAsJsonObject("results").get("sunrise")); //Ugnezdjeni Kljucevi 
 	}
 
